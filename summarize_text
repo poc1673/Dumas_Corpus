@@ -1,0 +1,10 @@
+#!/usr/bin/env bash      
+# This script performs the word counts for the dumas_compiled.txt file.
+
+cat dumas_compiled.txt | tr '[:upper:]' '[:lower:]' |
+		         grep -oE '\w+' |  
+  			 sort |  
+  			 uniq -c | 
+ 			 sort -nr |  
+  		 	 head -n 1000 > res.txt
+

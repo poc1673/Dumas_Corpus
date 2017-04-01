@@ -1,0 +1,10 @@
+#!/usr/bin/env bash                                                             
+# This script reads lines from a specified text file one by one.                
+# The purpose is for each line to be succesively piped to the summarize text function
+                                                                         
+filename=dumas.txt
+
+while read line; do
+    curl -s $line >> dumas_compiled.txt
+ done < $filename
+
